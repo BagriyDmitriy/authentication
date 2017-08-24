@@ -1,0 +1,10 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+<form class="form-signin" method="get" action="{{ path_for('logout') }}">
+    <h2 class="form-signin-heading">Hello, {{ username }}</h2>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign out</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+<form class="form-signin" method="post" action="{{ path_for('loginForm') }}">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+    {% if status.errors == true %}
+        <div class="alert alert-danger">
+            {{ status.text }}
+        </div>
+    {% endif %}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <h3>Test info</h3>
+    <div class="alert alert-info" role="alert">
+        <strong>user</strong> "test1", <strong>pass</strong> "password1"<br>
+        <strong>user</strong> "test2", <strong>pass</strong> "password2"<br>
+        <strong>user</strong> "test3", <strong>pass</strong> "password3"<br>
+        <strong>user</strong> "test4", <strong>pass</strong> "password4"<br>
+        <strong>user</strong> "test5", <strong>pass</strong> "password5"<br>
+    </div>
+</form>
+
+{% endblock %}
